@@ -15,6 +15,26 @@ html, body{
     max-width: 100%;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+    height: 10px;
+  }
+
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #831CAA; 
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a457c0; 
+  }
 
 .nav-bar{
     display: flex;
@@ -157,52 +177,21 @@ a{
 
 .popular_section{
     margin: 5rem 10px;
-
-}
-
-.section_category_title{
-    font-size: 22px;
-    font-weight: 700;
-    margin: 100px auto;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-align: center;
-    max-width: 550px;
     position: relative;
-
 }
-.section_category_title:before {
-    content: "";
-    display: block;
-    width: 120px;
-    height: 5px;
-    background: #831CAA;
-    left:0;
-    top: 50%;
-    position: absolute;
-  }
-  .section_category_title:after {
-    content: "";
-    display: block;
-    width: 120px;
-    height: 5px;
-    background: #831CAA;
-    top: 50%;
-    right: 0;
-    position: absolute;
-  }
+
 
 .popular_container{
     display: flex;
     align-items: center;
-    overflow: auto;
     padding: 20px;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
+    position: relative;
 
 }
 
 .item{
-    margin: 10px;
+    margin: auto;
     height: 300px;
     width: 250px;
     cursor: pointer;
@@ -235,6 +224,39 @@ a{
 .item_description p:first-child{
     margin-right:10px ;
 }
+/* title */
+.section_category_title{
+    font-size: 22px;
+    font-weight: 700;
+    margin: 100px auto;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    max-width: 550px;
+    position: relative;
+
+}
+.section_category_title:before {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 5px;
+    background: #831CAA;
+    left:0;
+    top: 50%;
+    position: absolute;
+  }
+  .section_category_title:after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 5px;
+    background: #831CAA;
+    top: 50%;
+    right: 0;
+    position: absolute;
+  }
+
 .watch_btn{
     padding: 7px;
     width: 70%;
@@ -280,3 +302,54 @@ a{
     border: 1px solid #831CAA;
     border-radius: 5px;
 }
+.card img{
+    height: 100%;
+    width: 100%;
+    object-position: center;
+   
+}
+
+/* next / prev */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #a457c0;
+    font-weight: bold;
+    font-size: 26px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(27, 27, 27, 0.61);
+    z-index: 10;
+  }
+
+  /* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+
+ }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 0.253);
+    cursor: pointer;
+  }
+
+@media only screen and (max-width:400px){
+    .films_container, 
+    .tvseries_container,
+    .animes_container{
+        grid-template-columns: repeat(auto-fill , minmax(180px, 1fr));
+    }
+    .card{
+        height: 310px;
+    }
+    .item{
+        margin: auto;
+    }
+} 
